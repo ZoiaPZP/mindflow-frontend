@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { uploadPhoto } from '../../redux/uploadPhoto/photoSlice';
 import { toast } from 'react-toastify';
 import styles from './uploadPhotoCss.module.css';
 import CameraIcon from '../../SVG/camera.svg?url';
 import { useNavigate } from 'react-router-dom';
+
+const MAX_SIZE_MB = 5;
 
 const UploadPhoto = () => {
   const navigate = useNavigate();
@@ -13,12 +15,6 @@ const UploadPhoto = () => {
 
   const dispatch = useDispatch();
   const { loading, photoUrl } = useSelector((state) => state.photo);
-
-  useEffect(() => {
-    if (photoUrl) {
-      navigate('/');
-    }
-  }, [photoUrl, navigate]);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -36,7 +32,18 @@ const UploadPhoto = () => {
       toast.error('Будь ласка, виберіть файл для завантаження!');
       return;
     }
-    dispatch(uploadPhoto(selectedFile));
+    if (!selectedFile.type.startsWith('image/')) {
+      toast.error('Будь ласка, виберіть зображення.');
+      return;
+    }
+    if (selectedFile.size > MAX_SIZE_MB * 1024 * 1024) {
+      toast.error(`Файл завеликий (максимум ${MAX_SIZE_MB} МБ).`);
+      return;
+    }
+    dispatch(uploadPhoto(selectedFile))
+      .unwrap()
+      .then(() => navigate('/'))
+      .catch(() => {});
   };
 
   return (
@@ -45,6 +52,7 @@ const UploadPhoto = () => {
 
       <input
         type="file"
+        accept="image/*"
         id="file-input"
         className={styles.inputFile}
         onChange={handleFileChange}
