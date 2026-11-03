@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { login, logout, refreshUser, register } from './operations';
+import { uploadPhoto } from '../uploadPhoto/photoSlice.js';
 import toast from 'react-hot-toast';
 import { setAuthHeader, removeAuthHeader } from '../../services/api';
 
@@ -68,6 +69,10 @@ const slice = createSlice({
         removeAuthHeader();
         toast.error('Logout failed, but you have been logged out locally.');
         return initialState;
+      })
+      .addCase(uploadPhoto.fulfilled, (state, action) => {
+        const avatarUrl = action.payload?.data?.avatarUrl;
+        if (avatarUrl) state.user.avatarUrl = avatarUrl;
       })
       .addCase(refreshUser.pending, (state) => {
         state.isRefreshing = true;
