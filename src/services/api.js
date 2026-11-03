@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const API_BASE_URL =
+export const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL ||
-  'https://mindflow-backend-iwk7.onrender.com';
+  'https://mindflow-backend-s1cw.onrender.com';
 
 axios.defaults.baseURL = API_BASE_URL;
 axios.defaults.withCredentials = true;

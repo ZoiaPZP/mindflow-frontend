@@ -2,9 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL ||
-  'https://mindflow-backend-iwk7.onrender.com';
+import { API_BASE_URL } from '../../services/api.js';
 
 export const uploadPhoto = createAsyncThunk(
   'photo/uploadPhoto',
