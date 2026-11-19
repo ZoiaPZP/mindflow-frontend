@@ -57,6 +57,7 @@
   border-radius: 64px;
   padding: 16px;
   width: 361px;
+  max-width: 100%;
   height: 57px;
   padding: 0.8rem 1.5rem;
   border: none;
@@ -91,13 +92,14 @@
 .buttons .secondary {
   border-radius: 64px;
   padding: 16px;
-  max-width: 361px;
+  max-width: 100%;
   height: 57px;
 }
 
 .image {
   position: static;
   width: 361px;
+  max-width: 100%;
   height: 321px;
   background-image: url('/img/Union-m-1x.png');
   background-size: cover;
