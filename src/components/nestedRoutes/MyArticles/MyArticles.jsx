@@ -11,7 +11,6 @@ import {
   selectAuthorArticlesPage,
   selectAuthorArticlesPages,
   selectAuthorArticlesLoading,
-  selectAuthorArticlesError,
 } from '../../../redux/user/selectors.js';
 
 const MyArticles = () => {

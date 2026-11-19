@@ -138,7 +138,7 @@ const LoginForm = () => {
             </button>
 
             <div className={s.linkWrapper}>
-              <span>Don't have an account?</span>
+              <span>Don&rsquo;t have an account?</span>
               <Link to="/register" className={s.link}>
                 Register
               </Link>
