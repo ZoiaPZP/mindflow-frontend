@@ -13,8 +13,6 @@ import {
 } from '../../redux/user/operation.js';
 import {
   selectAuthorData,
-  selectAuthorLoading,
-  selectAuthorError,
   selectAuthorArticles,
   selectAuthorArticlesPage,
   selectAuthorArticlesPages,
@@ -35,8 +33,6 @@ const AuthorProfilePage = () => {
   const dispatch = useDispatch();
 
   const authorData = useSelector(selectAuthorData);
-  const authorLoading = useSelector(selectAuthorLoading);
-  const authorError = useSelector(selectAuthorError);
   const authorArticlesLoading = useSelector(selectAuthorArticlesLoading);
 
   const authorArticles = useSelector(selectAuthorArticles);

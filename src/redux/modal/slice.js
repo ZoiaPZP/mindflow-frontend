@@ -13,7 +13,7 @@ const modalSlice = createSlice({
       state.isOpen = true;
       state.type = action.payload;
     },
-    closeModal: (state, action) => {
+    closeModal: (state) => {
       state.isOpen = false;
     },
     // toggleModal: (state, action) => {

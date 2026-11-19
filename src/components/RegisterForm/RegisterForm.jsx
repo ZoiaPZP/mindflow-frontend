@@ -134,8 +134,6 @@ const RegisterForm = () => {
           {({
             isSubmitting,
             values,
-            errors,
-            touched,
             submitCount,
             validateForm,
             handleSubmit,
@@ -247,7 +245,7 @@ const RegisterForm = () => {
                   </Field>
                 </div>
                 <Field name="password">
-                  {({ meta, field }) => (
+                  {({ meta }) => (
                     <div className={styles.errorContainer}>
                       {(meta.touched || submitCount > 0) && meta.error && (
                         <span className={styles.error}>{meta.error}</span>
@@ -306,7 +304,7 @@ const RegisterForm = () => {
                   </Field>
                 </div>
                 <Field name="confirmPassword">
-                  {({ meta, field }) => (
+                  {({ meta }) => (
                     <div className={styles.errorContainer}>
                       {(meta.touched || submitCount > 0) && meta.error && (
                         <span className={styles.error}>{meta.error}</span>

@@ -9,7 +9,6 @@ import { fetchAllArticles } from '../../redux/articles/operation';
 import {
   selectAllArticles,
   selectLoadingArticles,
-  selectErrorArticles,
   selectPage,
   selectPages,
   selectTotalArticles,
@@ -22,7 +21,6 @@ const ArticlesPage = () => {
 
   //console.log('ARTICLES:', articles);
   const loading = useSelector(selectLoadingArticles);
-  const error = useSelector(selectErrorArticles);
   const totalArticles = useSelector(selectTotalArticles);
   const currentPage = useSelector(selectPage);
   const totalPages = useSelector(selectPages);

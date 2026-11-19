@@ -30,6 +30,7 @@
   flex-direction: column;
   gap: 24px;
   width: 361px;
+  max-width: 100%;
   height: 338px;
   box-sizing: border-box;
 }
@@ -53,6 +54,7 @@
 
 .titleLabel {
   width: 361px;
+  max-width: 100%;
   height: 81px;
 }
 
@@ -68,6 +70,7 @@
   gap: 8px;
   padding: 12px;
   width: 361px;
+  max-width: 100%;
   height: 48px;
   border: 1px solid #9f9f9f;
   border-radius: 8px;
@@ -83,6 +86,7 @@
 
 .articleWrapper {
   width: 361px;
+  max-width: 100%;
   min-height: 393px;
   margin-top: 4px;
   margin-bottom: 24px;
@@ -164,6 +168,7 @@ span {
   padding: 12px 16px;
   border-radius: 64px;
   width: 361px;
+  max-width: 100%;
   height: 46px;
   background: #649179;
   font: 700 16px 'Manrope', sans-serif;
@@ -184,6 +189,7 @@ span {
   align-items: flex-start;
   gap: 8px;
   width: 361px;
+  max-width: 100%;
   height: 233px;
   cursor: pointer;
   position: relative;
@@ -198,6 +204,7 @@ span {
   justify-content: center;
   gap: 8px;
   width: 361px;
+  max-width: 100%;
   height: 233px;
   border-radius: 16px;
   background: #9f9f9f;
