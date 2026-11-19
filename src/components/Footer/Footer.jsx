@@ -34,6 +34,10 @@ const Footer = () => {
             </ul>
           </nav>
         </div>
+        <p className={css.credit}>
+          Team educational project based on a GoIT design. Images belong to their
+          respective owners.
+        </p>
       </Container>
     </footer>
   );
